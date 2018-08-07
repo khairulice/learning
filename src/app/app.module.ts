@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing } from './app.routing';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -22,6 +22,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     BrowserModule,
     routing,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

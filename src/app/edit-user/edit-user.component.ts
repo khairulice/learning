@@ -3,6 +3,7 @@ import { User } from '../user';
 import { UserServiceService } from '../user-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { ReactiveFormsModule, FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user',
@@ -20,7 +21,7 @@ export class EditUserComponent implements OnInit {
 
   get f() { return this.userForm.controls; }
 
-  constructor(private userService: UserServiceService, private route: ActivatedRoute, private formBuilder: FormBuilder) { }
+  constructor(private userService: UserServiceService, private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
 
@@ -48,10 +49,14 @@ export class EditUserComponent implements OnInit {
     if (this.userForm.invalid) {
       return;
     }
-    else {    
+    else {
       const user: User = Object.assign({}, this.userForm.value);
-      user._id=this.id;
-      this.userService.updateMember(user);
+      user._id = this.id;
+      this.userService.updateMember(user).subscribe(
+        res => { 
+          this.router.navigate(['/users']); },
+        err => { console.log(err); });
+
     }
   }
 }

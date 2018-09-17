@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { UserdeleteComponent } from './userdelete/userdelete.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     UserComponent,
     RegisterComponent,
     HomeComponent,
-    EditUserComponent
+    EditUserComponent,
+    UserdeleteComponent
   ],
   imports: [
     BrowserModule,

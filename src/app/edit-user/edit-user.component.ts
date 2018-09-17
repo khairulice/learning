@@ -40,8 +40,9 @@ export class EditUserComponent implements OnInit {
       'lastName': [null, Validators.required],
       'email': [null, [Validators.required, Validators.email]]
     });
-
   }
+ 
+
   onSubmit() {
     this.submitted = true;
     if (this.userForm.invalid) {
@@ -53,5 +54,4 @@ export class EditUserComponent implements OnInit {
       this.userService.updateMember(user);
     }
   }
-
 }

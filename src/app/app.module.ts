@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserdeleteComponent } from './userdelete/userdelete.component';
+import { VehicleBookingComponent } from './vehicle-booking/vehicle-booking.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserdeleteComponent } from './userdelete/userdelete.component';
     RegisterComponent,
     HomeComponent,
     EditUserComponent,
-    UserdeleteComponent
+    UserdeleteComponent,
+    VehicleBookingComponent
   ],
   imports: [
     BrowserModule,

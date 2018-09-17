@@ -29,15 +29,14 @@ export class UserServiceService {
       .subscribe(res => console.log('Done'));
   }
 
-  updateMember(user: User) {
+  updateMember(user: User):Observable<any> {
     const obj = {
      // _id:user._id,
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email
     };
-    this.http.put(`${URL}/${user._id}`, obj)
-      .subscribe(res => console.log('Done'));
+   return this.http.put(`${URL}/${user._id}`, obj).pipe(map(this.extractData),catchError(this.handleError));
   }
 
   getUsers(): Observable<any> {

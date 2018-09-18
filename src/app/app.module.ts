@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserdeleteComponent } from './userdelete/userdelete.component';
 import { VehicleBookingComponent } from './vehicle-booking/vehicle-booking.component';
+import { NbThemeModule } from '@nebular/theme';
+import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,16 @@ import { VehicleBookingComponent } from './vehicle-booking/vehicle-booking.compo
     routing,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email',
+        }),
+      ],
+      forms: {},
+    }), 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-ms-4">
+    <div [hidden]="submitted">
+      <h1>Vehicle Booking</h1>
+      <form (ngSubmit)="onSubmit()" #regForm="ngForm">
+        <div class="form-group">
+          <label for="vehicle">Vehicle</label>
+          <input type="text" [formControlName]="vehicle">
+          
+          <p>
+            Value: {{ vehicle.value }}
+          </p>       
+        </div>     
+       
+        <button type="submit" class="btn btn-success" [disabled]="!regForm.form.valid">Submit</button>
+      </form>
+    </div>
+    <div [hidden]="!submitted" class="message">Thank you!</div>
+  </div>
+
+</div>

@@ -10,10 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserdeleteComponent } from './userdelete/userdelete.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-
-import { NbThemeModule } from '@nebular/theme';
-import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
+import { VehicleBookingComponent } from './vehicle-booking/vehicle-booking.component';
 
 @NgModule({
   declarations: [
@@ -23,23 +20,14 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
     HomeComponent,
     EditUserComponent,
     UserdeleteComponent,
-    UserProfileComponent
+    VehicleBookingComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    NbThemeModule.forRoot({ name: 'default' }),
-    NbAuthModule.forRoot({
-      strategies: [
-        NbPasswordAuthStrategy.setup({
-          name: 'email',
-        }),
-      ],
-      forms: {},
-    }), 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
